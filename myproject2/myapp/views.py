@@ -35,10 +35,11 @@ def details(request, id):
     'mymember': mymember,
   }
   return HttpResponse(template.render(context, request))
-def testing(request):
-  context={
-     'firstname': 'Linus'
-  }
-  return render(request,"test.html",context)
+def testing(request): 
+  template = loader.get_template('template.html') 
+  context = { 
+  'fruits':['banana','apple','kiwi','grapes'] 
+  } 
+  return HttpResponse(template.render(context, request)) 
 
 
